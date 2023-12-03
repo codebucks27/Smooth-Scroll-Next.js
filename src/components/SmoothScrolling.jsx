@@ -6,7 +6,7 @@ function SmoothScrolling({ children }) {
     <ReactLenis
       root
       options={{ lerp: 0.0001, duration: 1.5, smoothTouch: true }}
-      direction={-1}
+      // here the lerp is the speed of the scroll
     >
       {children}
     </ReactLenis>

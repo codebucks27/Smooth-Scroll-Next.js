@@ -1,3 +1,36 @@
+# Implement Smooth Scrolling & Parallax Effect in Next.js using Lenis and GSAP 🔥
+
+![GitHub stars](https://img.shields.io/github/stars/codebucks27/Smooth-Scroll-Next.js?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;
+![GitHub forks](https://img.shields.io/github/forks/codebucks27/Smooth-Scroll-Next.js?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;
+![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
+
+For Demo checkout following links👇: <br />
+[Smooth Scrolling In Next.js](https://smooth-scroll-next-js.vercel.app/) <br />
+
+If you want to learn how to create it please follow below tutorial👇: <br />
+[Next.js Smoooth Scroll Tutorial](https://youtu.be/QNh0MH-G3OM) <br />
+[![YouTube Video Views](https://img.shields.io/youtube/views/QNh0MH-G3OM?style=social)](https://youtu.be/QNh0MH-G3OM)<br />
+
+Checkout My Personal blog: [DevDreaming](https://devdreaming.com/)<br />
+
+
+### ⭐DO NOT FORGET TO STAR THIS REPO⭐
+
+
+### Resources Used in This Project
+
+- [Next.js](https://nextjs.org/) <br />
+- [Leni Scroll](https://lenis.studiofreight.com/) <br />
+- [GSAP](https://gsap.com/) <br />
+- Images from [Lorem Picsum](https://picsum.photos/) <br />
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

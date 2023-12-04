@@ -9,7 +9,6 @@ const ImageList = () => {
     // called every scroll
     // console.log(scroll);
   });
-  // console.log(lenis);
 
   return (
     <>

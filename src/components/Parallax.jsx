@@ -29,7 +29,6 @@ export function Parallax({ className, children, speed = 1, id = "parallax" }) {
         onUpdate: (e) => {
           setY(e.progress * y);
         },
-        // markers: true,
       },
     });
 

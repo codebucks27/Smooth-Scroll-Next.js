@@ -1,20 +1,19 @@
 "use client";
-import React from "react";
 import { Parallax } from "@/components/Parallax";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 import Image from "next/image";
 
 const ImageList = () => {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-    // console.log(scroll);
-  });
+  const lenis = useLenis();
 
   return (
     <>
       <button
-        href="#last-image"
-        onClick={() => lenis.scrollTo("#last-image", { lerp: 0.01 })}
+        type="button"
+        onClick={() =>
+          lenis?.scrollTo("#last-image", { lerp: 0.01, duration: 0 })
+        }
+        // Disable inherited duration so the anchor retains its slower lerp.
         // lenis is the object returned from useLenis, and it has a method called scrollTo() that takes two arguments, the first is the id of the element you want to scroll to, and the second is the options object, here we set the lerp to 0.01 to make the scroll slower
         className="bg-white text-black capitalize p-4 font-semibold text-xl mt-16 hover:bg-white/90"
       >
@@ -27,7 +26,7 @@ const ImageList = () => {
           alt="Image"
           width={600}
           height={400}
-          priority
+          preload
           sizes="50vw"
         />
       </Parallax>
@@ -38,7 +37,7 @@ const ImageList = () => {
           alt="Image"
           width={600}
           height={400}
-          priority
+          preload
           sizes="50vw"
         />
       </Parallax>

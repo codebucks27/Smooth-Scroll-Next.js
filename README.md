@@ -66,3 +66,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Upgraded toolchain
+
+Uses Next.js 16.3.8, React 19.3.0, Lenis 1.3.26, GSAP 3.15.0, Tailwind CSS 4.3.3, ESLint 9.39.5, and TypeScript 6.0.3 for JavaScript checks. Archived Lenis/Hamo bindings were replaced, GSAP cleanup is scoped, and ESLint/Tailwind use their current configuration formats. With Bun 1.4.2 and Node.js 20.9+, run `bun install --frozen-lockfile`, then `bun run dev`, `bun run lint`, `bun run typecheck`, or `bun run build && bun run start`. No environment variables are required; Google Fonts and Lorem Picsum require network access. Production output is `.next/`.

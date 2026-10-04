@@ -1,0 +1,9 @@
+diff --git a/dist/lenis-react.d.ts b/dist/lenis-react.d.ts
+index e34ccd44a4cc21b7b0abb1f6e90f7432206b6f6a..701826a5f61429ef6188e01ec48412c39e77c366 100644
+--- a/dist/lenis-react.d.ts
++++ b/dist/lenis-react.d.ts
+@@ -1,4 +1,3 @@
+-"use client";
+ import Lenis, { LenisOptions, ScrollCallback } from "lenis";
+ import * as react from "react";
+ import { ComponentPropsWithoutRef, ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";

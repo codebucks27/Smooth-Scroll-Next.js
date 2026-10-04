@@ -1,7 +1,23 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": false,
+    "maxNodeModuleJsDepth": 0,
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "files": ["node_modules/gsap/types/index.d.ts"],
+  "include": ["src/**/*.js", "src/**/*.jsx", "*.js", "*.mjs"],
+  "exclude": ["node_modules", ".next"]
 }

@@ -1,40 +1,48 @@
 "use client";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { useWindowSize } from "@studio-freight/hamo";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/**
+ * @param {{ className?: string, children: import("react").ReactNode, speed?: number, id?: string }} props
+ */
 export function Parallax({ className, children, speed = 1, id = "parallax" }) {
-  const trigger = useRef(); // this is the element that will trigger the animation
-  const target = useRef();  // this is the element that will be animated
-  const timeline = useRef(); // this is the timeline of the animation that will be created by gsap 
-  const { width: windowWidth } = useWindowSize();
+  /** @type {import("react").RefObject<HTMLDivElement | null>} */
+  const trigger = useRef(null);
+  /** @type {import("react").RefObject<HTMLDivElement | null>} */
+  const target = useRef(null);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
+    const triggerElement = trigger.current;
+    const targetElement = target.current;
+    if (!windowWidth || !triggerElement || !targetElement) return;
+
     gsap.registerPlugin(ScrollTrigger);
+    // Keep the tutorial's signed, viewport-width-based movement distance.
     const y = windowWidth * speed * 0.1;
-    //  here the y is the distance the element will move in px when the trigger is at the top of the viewport and the element is at the bottom of the viewport
-
-
-    const setY = gsap.quickSetter(target.current, "y", "px");
-    // here we create a function that will set the y position of the element, The gsap.quickSetter() method is a handy way to create a function that will set a specific property on a specific object. In this case, we want to set the y property of the target element in pixels.
-
-    timeline.current = gsap.timeline({
-      scrollTrigger: {
-        id: id,
-        trigger: trigger.current, // this is the element that will trigger the animation
-        scrub: true, // this will make the animation smooth and not jumpy when scrolling up and down the page
-        start: "top bottom", // this means the animation will start when the top of the trigger element reaches the bottom of the viewport 
-        end: "bottom top", // this means the animation will end when the bottom of the trigger element reaches the top of the viewport
-        onUpdate: (e) => {
-          setY(e.progress * y);
+    const context = gsap.context(() => {
+      gsap.fromTo(
+        targetElement,
+        { y: 0 },
+        {
+          y,
+          ease: "none",
+          scrollTrigger: {
+            id,
+            trigger: triggerElement,
+            scrub: true,
+            start: "top bottom",
+            end: "bottom top",
+          },
         },
-      },
-    });
+      );
+    }, triggerElement);
 
-    return () => {
-      timeline?.current?.kill(); // this will kill the animation when the component unmounts
-    };
+    // Revert both the animation and ScrollTrigger, including inline styles,
+    // before a resize rebuild or React Strict Mode remount.
+    return () => context.revert();
   }, [id, speed, windowWidth]);
 
   return (
